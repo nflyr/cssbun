@@ -1,0 +1,64 @@
+/* layout: grid-reel */
+/* * grid-reel.css
+
+Reel of items...
+
+## Usage
+
+...
+
+## Variables
+
+- `--grid-reel--gap` : Gap between items
+- `--grid-reel--col-width`  : Width of each item
+
+*/
+
+@import url(basic.css);
+
+.grid-reel {
+   display: grid;
+   gap: var(--grid-reel--gap, var(--gap-m));
+   grid-auto-flow: column;
+   grid-auto-columns: var(--grid-reel--col-width, 30%);
+}
+
+.scroll-x {
+   overflow-x: scroll; /* old way, can be changed to auot... */
+   overflow-inline: scroll; /* new way, can be changed to auot... */
+   overscroll-behavior-inline: contain; /* do not keep scrolling parent */
+   scroll-snap-type: inline mandatory;
+   scroll-padding-inline: var(--grid-reel--gap, var(--gap-m));
+
+   & > * {
+      scroll-snap-align: start;
+      text-align: center;
+   }
+}
+
+.scroll-x-animation > * {
+   scroll-snap-align: center;
+   animation: scroller-an linear both;
+   animation-timeline: view(x);
+}
+
+@keyframes scroller-an {
+   0%,
+   100% {
+      opacity: 0.25;
+      scale: 0.5;
+   }
+   35%,
+   65% {
+      opacity: 1;
+      scale: 1;
+   }
+}
+
+.scroll-snap--center > * {
+   scroll-snap-align: center;
+}
+
+.scroll-snap--end > * {
+   scroll-snap-align: end;
+}

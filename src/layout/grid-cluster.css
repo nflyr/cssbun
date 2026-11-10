@@ -1,0 +1,23 @@
+/* * grid-cluster.css
+
+Flexible cluster of elements using grid (intrinsic layout)
+
+## Styles
+ 
+**.grid-cluster**
+
+...
+
+Variables:
+- `--cluster-min-width` : Minimum width for cluster items
+- `--cluster--gap`: Gap between cluster children
+
+*/
+
+@import url(basic.css);
+
+.grid-cluster {
+   display: grid;
+   gap: var(--cluster-gap, 1rem);
+   grid-template-columns: repeat(auto-fit, minmax(min(var(--cluster-min-width, 20ch), 100%), 1fr));
+}

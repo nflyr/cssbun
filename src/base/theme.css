@@ -1,0 +1,137 @@
+/* * theme.css
+
+Defines custom properties to be used as base references.
+
+*/
+
+:root {
+   font-family: system-ui, sans-serif;
+   font-size: 16px;
+
+   /* font family */
+
+   --font-sans: system-ui, sans-serif;
+   --font-serif: "Times New Roman", Times, Georgia, serif;
+   --font-mono: Consolas, "SF Mono", "DejaVu Sans Mono", monospace;
+   --font-base: system-ui, sans-serif;
+   --font-theme: var(--font-sans);
+
+   /* font size */
+
+   --fs-xs: 0.5rem;
+   --fs-s: 0.7rem;
+   --fs-m: 1rem;
+   --fs-l: 1.2rem;
+   --fs-xl: 1.8rem;
+
+   /* font weight */
+
+   --fw-xs: 100;
+   --fw-s: 200;
+   --fw-m: 300;
+   --fw-l: 500;
+   --fw-xl: 700;
+
+   /* line height */
+   --lh-xs: 0.9;
+   --lh-s: 1.3;
+   --lh-m: 1.6;
+   --lh-l: 1.9;
+   --lh-xl: 2.4;
+
+   /* margin */
+
+   --mx-s: 0.3rem;
+   --mx-m: 0.8rem;
+   --mx-l: 1.6rem;
+
+   --my-s: var(--mx-s);
+   --my-m: var(--mx-m);
+   --my-l: var(--mx-l);
+
+   /* border width */
+
+   --bw-s: 0.025rem; /* = 0.4px */
+   --bw-m: 0.05rem; /* = 0.8px */
+   --bw-l: 0.075rem; /* = 1.2px */
+
+   /* outline width */
+
+   --ow-s: var(--bw-s);
+   --ow-m: var(--bw-m);
+   --ow-l: var(--bw-l);
+
+   /* outline offset */
+
+   --oo-s: 1px;
+   --oo-m: 4px;
+   --oo-l: 8px;
+
+   /* padding */
+
+   --px-s: 0.3rem;
+   --px-m: 0.8rem;
+   --px-l: 1.6rem;
+
+   --py-s: var(--px-s);
+   --py-m: var(--px-m);
+   --py-l: var(--px-l);
+
+   /* flex and grid gap */
+
+   --gap-s: var(--px-s);
+   --gap-m: var(--px-m);
+   --gap-l: var(--px-l);
+
+   /* color pallete (tailwind:slate) */
+
+   --pallete-050: oklch(98.4% 0.003 247.858);
+   --pallete-100: oklch(96.8% 0.007 247.896);
+   --pallete-200: oklch(92.9% 0.013 255.508);
+   --pallete-300: oklch(86.9% 0.022 252.894);
+   --pallete-400: oklch(70.4% 0.04 256.788);
+   --pallete-500: oklch(55.4% 0.046 257.417);
+   --pallete-600: oklch(44.6% 0.043 257.281);
+   --pallete-700: oklch(37.2% 0.044 257.287);
+   --pallete-800: oklch(27.9% 0.041 260.031);
+   --pallete-900: oklch(20.8% 0.042 265.755);
+   --pallete-950: oklch(12.9% 0.042 264.695);
+
+   /*end*/
+}
+
+/**
+ * Map usable colors for LIGHT mode activation
+ */
+
+:root:has(#theme[data-theme="light"]) {
+   --color-050: var(--pallete-050);
+   --color-100: var(--pallete-100);
+   --color-200: var(--pallete-200);
+   --color-300: var(--pallete-300);
+   --color-400: var(--pallete-400);
+   --color-500: var(--pallete-500);
+   --color-600: var(--pallete-600);
+   --color-700: var(--pallete-700);
+   --color-800: var(--pallete-800);
+   --color-900: var(--pallete-900);
+   --color-950: var(--pallete-950);
+}
+
+/**
+ * Map usable colors for DARK mode activation
+ */
+
+:root:has(#theme[data-theme="dark"]) {
+   --color-050: var(--pallete-950);
+   --color-100: var(--pallete-900);
+   --color-200: var(--pallete-800);
+   --color-300: var(--pallete-700);
+   --color-400: var(--pallete-600);
+   --color-500: var(--pallete-500);
+   --color-600: var(--pallete-400);
+   --color-700: var(--pallete-300);
+   --color-800: var(--pallete-200);
+   --color-900: var(--pallete-100);
+   --color-950: var(--pallete-050);
+}

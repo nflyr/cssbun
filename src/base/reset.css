@@ -1,0 +1,53 @@
+/* reset.css */
+
+*,
+*::before,
+*::after {
+   box-sizing: border-box;
+}
+
+* {
+   margin: 0;
+   padding: 0;
+   font: inherit;
+}
+
+html {
+   margin: 0;
+   padding: 0;
+   color-scheme: dark light;
+}
+
+input,
+button,
+select,
+textarea {
+   font: inherit;
+}
+
+menu,
+ul,
+ol {
+   list-style-type: none;
+}
+
+img,
+picture,
+svg,
+video {
+   display: block;
+   max-width: 100%;
+}
+
+/* see [Kevin Pickers]() */
+select,
+::picker(select) {
+   appearance: base-select;
+}
+
+code {
+   font-family: monospace;
+   line-height: 0.9;
+   padding-inline: 0.2rem;
+   background-color: oklch(55.1% 0.027 264.364 / 0.2);
+}

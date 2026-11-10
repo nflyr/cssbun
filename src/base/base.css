@@ -1,0 +1,599 @@
+/*
+# BASE css styles
+
+The base file defines a set of basic classes that set the root styles of the library.
+Most of the actual values are indexed into `theme.css` custom properties.
+
+## Cheat sheet
+
+| Class                 | Objective                                                     | Theme Custom    |
+| --------------------- | ------------------------------------------------------------- | --------------- |
+| `bg-[050-900]`        | Background color sequence                                     | `--color-XXX`   |
+| `bg-transparent`      | Transparent background                                        |                 |
+| `text-[050-900]`      | Text color sequence                                           | `--color-XXX`   |
+| `text-transparent`    | Transparent text                                              |                 |
+| `font-[type]`         | Font types: `sans`(serif), `serif`, `mono`(space) and `theme` | `--font-[type]` |
+| `fs-[size]`           | Font size, one of `xs;s;m;l;xl`                               | `--fs-[size]`   |
+| `fw-[size]`           | Font weight, one of `xs;s;m;l;xl`                             | `--fw-[size]`   |
+| `lh-[size]`           | Line height, one of `xs;s;m;l;xl`                             | `--lh-[size]`   |
+| `text-underline`      | Underline text                                                |                 |
+| `text-strike`         | Strike through text                                           |                 |
+| `m-[size]`            | Margin, one of `s;m;l`                                        | `--mx-[size]`   |
+| `mx-[size]`           | Margin inline width, one of `s;m;l`                           | `--mx-[size]`   |
+| `my-[size]`           | Margin block width, one of `s;m;l`                            | `--my-[size]`   |
+| `bw-[size]`           | Border width, one of `s;m;l`                                  | `--bw-[size]`   |
+| `bc-[050-900]`        | Border color sequence                                         | `--color-XXX`   |
+| `bc-transparent`      | Transparent border                                            |                 |
+| `ow-[size]`           | Outline width, one of `s;m;l`                                 | `--ow-[size]`   |
+| `oo-[size]`           | Outline offset, one of `s;m;l`                                | `--oo-[size]`   |
+| `oc-[050-900]`        | Outline color sequence                                        | `--color-XXX`   |
+| `oc-transparent`      | Transparent outline color                                     |                 |
+| `p-[size]`            | Padding, one of `s;m;l`                                       | `--px-[size]`   |
+| `px-[size]`           | Padding inline width, one of `s;m;l`                          | `--px-[size]`   |
+| `py-[size]`           | Padding block width, one of `s;m;l`                           | `--py-[size]`   |
+| `inline`              | Display as a inline element                                   |                 |
+| `inline-block`        | Display as a inline block element                             |                 |
+| `block`               | Display as a block element                                    |                 |
+| `hidden`              | Set Display to none                                           |                 |
+| `invisible`           | Set Visibility to invisible (the the space reserved)          |                 |
+| `static`              | Element position static on the page (default)                 |                 |
+| `absolute`            | Element position absolute (to first relative parent)          |                 |
+| `relative`            | Element position relative (may offset from normal flow)       |                 |
+| `fixed`               | Element position fixed (in the page)                          |                 |
+| `sticky`              | Element position sticky (to a inline or block boundary)       |                 |
+| `z-index-[index]`     | Push element up in the redering layer, [`1` to `5`]           |                 |
+| `isolate`             | Force creation of a new stacking context                      |                 |
+| `aspect-[type]`       | Aspect ratio for img, one of `square;video;golden`            |                 |
+| `overflow-[type]`     | Overflow, one of `auto;hidden;scroll;clip`                    |                 |
+| `overflow-[a]-[type]` | Overflow distinct for axis, one of `x;y` (and then type)      |                 |
+| `gap-[size]`          | Gap for Flex and Grid, one of `s;m;l`                         | `--gap-[size]`  |
+*/
+
+@import url(reset.css);
+@import url(theme.css);
+
+/* background color */
+
+.bg-050 {
+   background-color: var(--color-050);
+}
+.bg-100 {
+   background-color: var(--color-100);
+}
+.bg-200 {
+   background-color: var(--color-200);
+}
+.bg-300 {
+   background-color: var(--color-300);
+}
+.bg-400 {
+   background-color: var(--color-400);
+}
+.bg-500 {
+   background-color: var(--color-500);
+}
+.bg-600 {
+   background-color: var(--color-600);
+}
+.bg-700 {
+   background-color: var(--color-700);
+}
+.bg-800 {
+   background-color: var(--color-800);
+}
+.bg-900 {
+   background-color: var(--color-900);
+}
+.bg-950 {
+   background-color: var(--color-950);
+}
+.bg-transparent {
+   background-color: transparent;
+}
+
+/* text color */
+
+.text-050 {
+   color: var(--color-050);
+}
+.text-100 {
+   color: var(--color-100);
+}
+.text-200 {
+   color: var(--color-200);
+}
+.text-300 {
+   color: var(--color-300);
+}
+.text-400 {
+   color: var(--color-400);
+}
+.text-500 {
+   color: var(--color-500);
+}
+.text-600 {
+   color: var(--color-600);
+}
+.text-700 {
+   color: var(--color-700);
+}
+.text-800 {
+   color: var(--color-800);
+}
+.text-900 {
+   color: var(--color-900);
+}
+.text-950 {
+   color: var(--color-950);
+}
+.text-transparent {
+   color: transparent;
+}
+
+/* font family */
+
+.font-sans {
+   font-family: var(--font-sans);
+}
+.font-serif {
+   font-family: var(--font-serif);
+}
+.font-mono {
+   font-family: var(--font-mono);
+}
+.font-base {
+   font-family: var(--font-base);
+}
+.font-theme {
+   font-family: var(--font-theme);
+}
+
+/* font size */
+
+.fs-xs {
+   font-size: var(--fs-xs);
+}
+.fs-s {
+   font-size: var(--fs-s);
+}
+.fs-m {
+   font-size: var(--fs-m);
+}
+.fs-l {
+   font-size: var(--fs-l);
+}
+.fs-xl {
+   font-size: var(--fs-xl);
+}
+
+/* font weight */
+
+.fw-xs {
+   font-weight: var(--fw-xs);
+}
+.fw-s {
+   font-weight: var(--fw-s);
+}
+.fw-m {
+   font-weight: var(--fw-m);
+}
+.fw-l {
+   font-weight: var(--fw-l);
+}
+.fw-xl {
+   font-weight: var(--fw-xl);
+}
+
+/* line height */
+
+.lh-xs {
+   line-height: var(--lh-xs);
+}
+.lh-s {
+   line-height: var(--lh-xs);
+}
+.lh-m {
+   line-height: var(--lh-xs);
+}
+.lh-l {
+   line-height: var(--lh-xs);
+}
+.lh-xl {
+   line-height: var(--lh-xs);
+}
+
+/* text decoration */
+
+.text-underline {
+   text-decoration: underline;
+}
+.text-strike {
+   text-decoration: line-through;
+}
+
+/* margin */
+
+.m-s {
+   margin: var(--my-s) var(--mx-s);
+}
+.m-m {
+   margin: var(--my-m) var(--mx-m);
+}
+.m-l {
+   margin: var(--my-l) var(--mx-l);
+}
+
+.mx-s {
+   margin-inline: var(--mx-s);
+}
+.mx-m {
+   margin-inline: var(--mx-m);
+}
+.mx-l {
+   margin-inline: var(--mx-l);
+}
+
+.my-s {
+   margin-block: var(--my-s);
+}
+.my-m {
+   margin-block: var(--my-m);
+}
+.my-l {
+   margin-block: var(--my-l);
+}
+
+/* border width */
+
+.bw-s {
+   border-width: var(--bw-s);
+}
+.bw-m {
+   border-width: var(--bw-m);
+}
+.bw-l {
+   border-width: var(--bw-l);
+}
+
+/* border color */
+
+.bc-050 {
+   border-color: var(--color-050);
+}
+.bc-100 {
+   border-color: var(--color-100);
+}
+.bc-200 {
+   border-color: var(--color-200);
+}
+.bc-300 {
+   border-color: var(--color-300);
+}
+.bc-400 {
+   border-color: var(--color-400);
+}
+.bc-500 {
+   border-color: var(--color-500);
+}
+.bc-600 {
+   border-color: var(--color-600);
+}
+.bc-700 {
+   border-color: var(--color-700);
+}
+.bc-800 {
+   border-color: var(--color-800);
+}
+.bc-900 {
+   border-color: var(--color-900);
+}
+.bc-950 {
+   border-color: var(--color-950);
+}
+.bc-transparent {
+   border-color: transparent;
+}
+
+/* outline width */
+
+.ow-s {
+   outline-width: var(--ow-s);
+}
+.ow-m {
+   outline-width: var(--ow-m);
+}
+.ow-l {
+   outline-width: var(--ow-l);
+}
+
+/* outline offset */
+
+.oo-s {
+   outline-offset: var(--oo-s);
+}
+.oo-m {
+   outline-offset: var(--oo-m);
+}
+.oo-l {
+   outline-offset: var(--oo-l);
+}
+
+/* outline color */
+
+.oc-050 {
+   outline-color: var(--color-050);
+}
+.oc-100 {
+   outline-color: var(--color-050);
+}
+.oc-200 {
+   outline-color: var(--color-050);
+}
+.oc-300 {
+   outline-color: var(--color-050);
+}
+.oc-400 {
+   outline-color: var(--color-050);
+}
+.oc-500 {
+   outline-color: var(--color-050);
+}
+.oc-600 {
+   outline-color: var(--color-050);
+}
+.oc-700 {
+   outline-color: var(--color-050);
+}
+.oc-800 {
+   outline-color: var(--color-050);
+}
+.oc-900 {
+   outline-color: var(--color-050);
+}
+.oc-950 {
+   outline-color: var(--color-050);
+}
+.oc-transparent {
+   outline-color: transparent;
+}
+
+/* padding */
+
+.p-s {
+   padding: var(--py-s) var(--px-s);
+}
+.p-m {
+   padding: var(--py-m) var(--px-m);
+}
+.p-l {
+   padding: var(--py-l) var(--px-l);
+}
+
+.px-s {
+   padding-inline: var(--px-s);
+}
+.px-m {
+   padding-inline: var(--px-m);
+}
+.px-l {
+   padding-inline: var(--px-l);
+}
+
+.py-s {
+   padding-block: var(--py-s);
+}
+.py-m {
+   padding-block: var(--py-m);
+}
+.py-l {
+   padding-block: var(--py-l);
+}
+
+/* display */
+
+.inline {
+   display: inline;
+}
+.inline-block {
+   display: inline-block;
+}
+.block {
+   display: block;
+}
+
+/* visibility */
+
+.hidden {
+   display: none;
+}
+.invisible {
+   visibility: hidden;
+}
+
+/* position */
+
+.absolute {
+   position: absolute;
+}
+.relative {
+   position: relative;
+}
+.static {
+   position: static;
+}
+.fixed {
+   position: fixed;
+}
+.sticky {
+   position: sticky;
+}
+
+/* z-index */
+
+.z-index-1 {
+   z-index: 1;
+}
+.z-index-2 {
+   z-index: 2;
+}
+.z-index-3 {
+   z-index: 3;
+}
+.z-index-4 {
+   z-index: 4;
+}
+.z-index-5 {
+   z-index: 5;
+}
+
+/* isolation */
+
+.isolate {
+   isolation: isolate;
+}
+
+/* aspect ratio */
+
+.aspect-square {
+   aspect-ratio: 1 / 1;
+}
+.aspect-video {
+   aspect-ratio: 16 / 9;
+}
+.aspect-golden {
+   aspect-ratio: 1.618 / 1;
+}
+
+/* overflow */
+
+.overflow-auto {
+   overflow: auto;
+}
+.overflow-x-auto {
+   overflow-x: auto;
+}
+.overflow-y-auto {
+   overflow-y: auto;
+}
+.overflow-hidden {
+   overflow: hidden;
+}
+.overflow-x-hidden {
+   overflow-x: hidden;
+}
+.overflow-y-hidden {
+   overflow-y: hidden;
+}
+.overflow-scroll {
+   overflow: scroll;
+}
+.overflow-x-scroll {
+   overflow-x: scroll;
+}
+.overflow-y-scroll {
+   overflow-y: scroll;
+}
+.overflow-clip {
+   overflow: clip;
+}
+.overflow-x-clip {
+   overflow-x: clip;
+}
+.overflow-y-clip {
+   overflow-y: clip;
+}
+
+/* FLEX and GRID gap */
+
+.gap-s {
+   gap: var(--gap-s);
+}
+.gap-m {
+   gap: var(--gap-m);
+}
+.gap-l {
+   gap: var(--gap-l);
+}
+
+/* FLEX */
+
+/* Maybe include ONLY the ones used in Layouts... */
+
+.flex {
+   display: flex;
+   &.column {
+      flex-direction: column;
+   }
+   &.justify-start {
+      justify-content: flex-start;
+   }
+   &.justify-end {
+      justify-content: flex-end;
+   }
+   &.justify-center {
+      justify-content: center;
+   }
+   &.justify-between {
+      justify-content: space-between;
+   }
+   &.justify-around {
+      justify-content: space-around;
+   }
+   &.justify-evenly {
+      justify-content: space-evenly;
+   }
+   &.items-start {
+      align-items: flex-start;
+   }
+   &.items-end {
+      align-items: flex-end;
+   }
+   &.items-center {
+      align-items: center;
+   }
+   &.items-baseline {
+      align-items: baseline;
+   }
+   &.items-stretch {
+      align-items: stretch;
+   }
+   &.content-start {
+      align-content: flex-start;
+   }
+   &.content-end {
+      align-content: flex-end;
+   }
+   &.content-center {
+      align-content: center;
+   }
+   &.content-between {
+      align-content: space-between;
+   }
+   &.content-around {
+      align-content: space-around;
+   }
+   &.content-stretch {
+      align-content: stretch;
+   }
+}
+.flex-wrap {
+   flex-wrap: wrap;
+}
+.flex-nowrap {
+   flex-wrap: nowrap;
+}
+.flex--1 {
+   flex: 1;
+}
+
+/* GRID */
+
+/* Maybe include ONLY the ones used in Components */
+
+.grid {
+   display: grid;
+   &.auto-cols {
+      grid-template-columns: repeat(auto-fit, minmax(var(--min-panel-width, 10ch), 1fr));
+   }
+   /* more todo here... */
+}

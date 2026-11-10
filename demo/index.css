@@ -1,0 +1,25 @@
+@import url(/src/base/base.css);
+
+.app {
+   text-align: center;
+   padding: var(--px-l);
+
+   h1 {
+      font-size: var(--fs-l);
+   }
+
+   .layouts {
+      margin: auto;
+      border: 1px solid lightseagreen;
+      border-radius: 6px;
+
+      header {
+         margin-block: var(--py-m);
+         font-size: var(--fs-l);
+      }
+
+      li {
+         line-height: var(--lh-m);
+      }
+   }
+}

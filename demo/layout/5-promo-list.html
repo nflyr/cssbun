@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="stylesheet" href="/src/base/base.css" />
+      <link rel="stylesheet" href="/src/layout/grid-cluster.css" />
+      <title>[5] Promo list</title>
+      <style>
+         .page {
+            padding: var(--py-m) var(--px-m);
+            --wrapper-block-gap: var(--py-m);
+         }
+         .sidebar-section {
+            border: 1px solid red;
+            container-type: inline-size;
+         }
+         .promo-list {
+            text-align: center;
+            display: grid;
+            gap: 1rem;
+            @container (width > 500px) {
+               grid-template-columns: repeat(3, 1fr);
+            }
+
+            & > * {
+               padding: var(--py-s) var(--px-m);
+               box-shadow: 1px 1px 3px gray;
+               border: 2px solid lightcoral;
+               border-radius: 10px;
+               corner-shape: bevel;
+            }
+         }
+      </style>
+   </head>
+   <body class="page wrapper">
+      <aside class="nav"><a href="/demo/index.html">back</a></aside>
+      <h1>[5] Promo List</h1>
+      <div class="fs-s">@Container query: go vertical when width bellow 500px aprox.</div>
+      <section class="sidebar-section p-m">
+         <!-- the layout is applyed here -->
+         <ul class="promo-list">
+            <li>
+               <h2>Lorem</h2>
+               <span class="fs-s">lorem ipsum</span>
+            </li>
+            <li>
+               <h2>Ipsum</h2>
+               <span class="fs-s">ipsum dolor et muxho</span>
+            </li>
+            <li>
+               <h2>Dolor</h2>
+               <span class="fs-s">dolor et muxho sit amet</span>
+            </li>
+         </ul>
+      </section>
+   </body>
+</html>

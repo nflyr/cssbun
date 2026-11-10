@@ -1,0 +1,28 @@
+/* * flex-cluster.css
+
+Flexible cluster of elements using flex
+
+## Styles
+ 
+**.flex-cluster**
+
+...
+
+Variables:
+- `--flex-cluster--gap`: Gap between cluster children
+
+*/
+
+@import url(basic.css);
+
+.flex-cluster {
+   display: flex;
+   flex-wrap: wrap;
+   gap: var(--flex-cluster--gap, 1rem);
+}
+
+/* optional, occuppy all available space */
+.flex-cluster > * {
+   flex-grow: 1; /* try to keep all words in one line */
+   /* flex: 1; <-- replace with this if you want words to wrap (min-space) */
+}

@@ -1,0 +1,31 @@
+/* main and sidebar */
+
+.main-and-sidebar {
+   --gap: 1rem;
+   --main-width: 400px;
+   --sidebar-width: 200px;
+   display: flex;
+   flex-wrap: wrap; /* for small sizes (no media query) */
+   align-items: start;
+   gap: var(--gap, 1rem);
+}
+
+.main-and-sidebar:not(.bar--first) :first-child {
+   flex-basis: var(--main-width);
+   flex-grow: 999; /* grow in a scale much larger then the sidebar */
+}
+
+.main-and-sidebar:not(.bar--first) :last-child {
+   flex-basis: var(--sidebar-width);
+   flex-grow: 1; /* grow in a scale of 1 */
+}
+
+.main-and-sidebar.bar--first :first-child {
+   flex-basis: var(--sidebar-width);
+   flex-grow: 1; /* grow in a scale of 1 */
+}
+
+.main-and-sidebar.bar--first :last-child {
+   flex-basis: var(--main-width);
+   flex-grow: 999; /* grow in a scale much larger then the sidebar */
+}

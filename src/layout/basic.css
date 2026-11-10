@@ -1,0 +1,35 @@
+/* * basic.css
+
+Contains very basic CSS layout items
+
+## Styles
+ 
+**.wrapper**
+
+Ensures a constant vertical gap between child elements
+
+Variables:
+- `--wrapper-block-gap`: Vertical gap between child elements
+
+*/
+
+/* text alignment */
+
+.text-start {
+   text-align: start;
+}
+.text-end {
+   text-align: end;
+}
+.text-center {
+   text-align: center;
+}
+.text-justify {
+   text-align: justify;
+}
+
+/* Wrappers & containers */
+
+.wrapper > * + * {
+   margin-block-start: var(--wrapper-block-gap, var(--my-l)); /* the lobotomized aowl */
+}
