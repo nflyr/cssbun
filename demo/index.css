@@ -1,5 +1,8 @@
 @import url(/src/base/base.css);
 
+:root {
+}
+
 .app {
    text-align: center;
    padding: var(--px-l);

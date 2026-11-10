@@ -7,12 +7,9 @@
       <link rel="stylesheet" href="/src/layout/grid-cluster.css" />
       <title>[5] Promo list</title>
       <style>
-         .page {
-            padding: var(--py-m) var(--px-m);
-            --wrapper-block-gap: var(--py-m);
-         }
+         /* parent MUST declare container-type */
          .sidebar-section {
-            border: 1px solid red;
+            border: 1px dotted var(--color-700);
             container-type: inline-size;
          }
          .promo-list {
@@ -33,7 +30,7 @@
          }
       </style>
    </head>
-   <body class="page wrapper">
+   <body id="theme" data-theme="light" class="wrapper p-m">
       <aside class="nav"><a href="/demo/index.html">back</a></aside>
       <h1>[5] Promo List</h1>
       <div class="fs-s">@Container query: go vertical when width bellow 500px aprox.</div>

@@ -101,7 +101,8 @@ Defines custom properties to be used as base references.
 }
 
 /**
- * Map usable colors for LIGHT mode activation
+ * * Map usable colors for LIGHT mode activation
+ * Use: <body id="theme" data-theme="light">
  */
 
 :root:has(#theme[data-theme="light"]) {
@@ -119,7 +120,8 @@ Defines custom properties to be used as base references.
 }
 
 /**
- * Map usable colors for DARK mode activation
+ * * Map usable colors for DARK mode activation
+ * Use: <body id="theme" data-theme="light">
  */
 
 :root:has(#theme[data-theme="dark"]) {
